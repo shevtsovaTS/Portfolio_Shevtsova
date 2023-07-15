@@ -1,0 +1,374 @@
+{
+	"id": "29fcd4f9-0c0c-4783-af4f-d3bdba38f13b",
+	"name": "CW_2_Шевцова",
+	"timestamp": "2023-05-20T16:28:53.691Z",
+	"collection_id": "26803617-60d6373e-24d1-4435-98ce-99cfd4de4b83",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-05-20T16:28:49.160Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "5b2365af-972e-4263-8e7e-2f474dd4b8e5",
+			"name": "Просмотр расписания",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/events",
+			"time": 782,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				782
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d881c118-8211-4a28-9979-c6478bf7243b",
+			"name": "CW2-1_Добавление личного события латиницей в прошлом",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/createPersonal",
+			"time": 117,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				117
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f9ca4543-8bdf-4300-b649-1629ddfad8eb",
+			"name": "CW2-12 Изменение цвета личного события в прошлом",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/updatePersonal",
+			"time": 158,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				158
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4f458c9d-c030-4f8a-bfa2-e7ea40fcdaf9",
+			"name": "CW2-13 Удаление личного события",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/removePersonal",
+			"time": 117,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				117
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e4c0a340-c0d0-4b30-a6d2-9ce3c4070099",
+			"name": "CW2-9_Добавление личного события кирилицей в прошлом",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/createPersonal",
+			"time": 121,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				121
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6292adb9-33b0-4b42-aa34-8970ac7fb9d6",
+			"name": "CW2-14 Редактирование наименования личного события",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/updatePersonal",
+			"time": 198,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				198
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b7e43f7e-3c3f-406b-b8c7-2c0cfbf4e1ae",
+			"name": "CW2-13 Удаление личного события",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/removePersonal",
+			"time": 120,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				120
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "88407916-754e-432c-a159-e9a26079be3b",
+			"name": "CW2-10_Добавление личного события 40 симв в будущем",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/createPersonal",
+			"time": 115,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				115
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "feb9c787-75f1-4e26-870f-a7d1decf4890",
+			"name": "CW2-15 Редактирование даты личного события",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/updatePersonal",
+			"time": 168,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				168
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "04182078-5fbe-442b-93aa-0985187b3550",
+			"name": "CW2-13 Удаление личного события Copy",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/removePersonal",
+			"time": 146,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				146
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ab3d07fa-9b7a-4fa0-aa21-670771237d64",
+			"name": "CW2-11_Добавление личного события со спецсимволами в будущем",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/createPersonal",
+			"time": 121,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				121
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8bc845b4-9c25-4efa-8b5e-03a2414d586c",
+			"name": "CW2-16_Добавление личного события с буквами и цифрами, пересекающееся во времени",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/createPersonal",
+			"time": 119,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				119
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "662bfbf3-1866-454c-9348-c068b6664153",
+			"name": "CW2-13 Удаление личного события",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/removePersonal",
+			"time": 129,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				129
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2f619a5f-0d30-4520-9bc5-a52fb8e86b1f",
+			"name": "CW2-13 Удаление личного события",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/removePersonal",
+			"time": 126,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				126
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "20cb5dad-a2c9-4b42-8e92-c71d2769f880",
+			"name": "CW2-17_Добавление личного события с валидным наименованием и заполненным валидными значениями полем \"Описание\"",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/createPersonal",
+			"time": 118,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				118
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "36111dde-2462-4ab3-87b1-8aec0398a39a",
+			"name": "CW2-13 Удаление личного события Copy",
+			"url": "https://api-teachers.skyeng.ru/v2/schedule/removePersonal",
+			"time": 137,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				137
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 2792,
+	"collection": {
+		"requests": [
+			{
+				"id": "5b2365af-972e-4263-8e7e-2f474dd4b8e5",
+				"method": "POST"
+			},
+			{
+				"id": "d881c118-8211-4a28-9979-c6478bf7243b",
+				"method": "POST"
+			},
+			{
+				"id": "f9ca4543-8bdf-4300-b649-1629ddfad8eb",
+				"method": "POST"
+			},
+			{
+				"id": "4f458c9d-c030-4f8a-bfa2-e7ea40fcdaf9",
+				"method": "POST"
+			},
+			{
+				"id": "e4c0a340-c0d0-4b30-a6d2-9ce3c4070099",
+				"method": "POST"
+			},
+			{
+				"id": "6292adb9-33b0-4b42-aa34-8970ac7fb9d6",
+				"method": "POST"
+			},
+			{
+				"id": "b7e43f7e-3c3f-406b-b8c7-2c0cfbf4e1ae",
+				"method": "POST"
+			},
+			{
+				"id": "88407916-754e-432c-a159-e9a26079be3b",
+				"method": "POST"
+			},
+			{
+				"id": "feb9c787-75f1-4e26-870f-a7d1decf4890",
+				"method": "POST"
+			},
+			{
+				"id": "04182078-5fbe-442b-93aa-0985187b3550",
+				"method": "POST"
+			},
+			{
+				"id": "ab3d07fa-9b7a-4fa0-aa21-670771237d64",
+				"method": "POST"
+			},
+			{
+				"id": "8bc845b4-9c25-4efa-8b5e-03a2414d586c",
+				"method": "POST"
+			},
+			{
+				"id": "662bfbf3-1866-454c-9348-c068b6664153",
+				"method": "POST"
+			},
+			{
+				"id": "2f619a5f-0d30-4520-9bc5-a52fb8e86b1f",
+				"method": "POST"
+			},
+			{
+				"id": "20cb5dad-a2c9-4b42-8e92-c71d2769f880",
+				"method": "POST"
+			},
+			{
+				"id": "36111dde-2462-4ab3-87b1-8aec0398a39a",
+				"method": "POST"
+			}
+		]
+	}
+}

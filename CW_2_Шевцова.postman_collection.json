@@ -1,0 +1,885 @@
+{
+	"info": {
+		"_postman_id": "60d6373e-24d1-4435-98ce-99cfd4de4b83",
+		"name": "CW_2_Шевцова",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26803617",
+		"_collection_link": "https://winter-meteor-694955.postman.co/workspace/Lesson_5~de981259-d9ab-4ed6-b786-eb32e79c8c58/collection/26803617-60d6373e-24d1-4435-98ce-99cfd4de4b83?action=share&creator=26803617&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Просмотр расписания",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\": \"2023-05-15T00:00:00+03:00\",\r\n    \"till\": \"2023-05-22T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/events",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-1_Добавление личного события латиницей в прошлом",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"dataId\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"\r",
+							"pm.collectionVariables.set(key,value);\r",
+							"\r",
+							"var key = \"startAt\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"\r",
+							"pm.collectionVariables.set(key,value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"Shevtsova\",\r\n    \"startAt\": \"2023-05-15T19:00:00+03:00\",\r\n    \"endAt\": \"2023-05-15T19:30:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/createPersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-12 Изменение цвета личного события в прошлом",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\": \"\",\r\n    \"title\":\"Shevtsova\",\r\n    \"startAt\": \"{{startAt}}\",\r\n    \"endAt\": \"2023-05-15T19:30:00+03:00\",\r\n    \"id\": {{dataId}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/updatePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"updatePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-13 Удаление личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{dataId}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/removePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"removePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-9_Добавление личного события кирилицей в прошлом",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"dataId2\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"\r",
+							"pm.collectionVariables.set(key,value);\r",
+							"\r",
+							"var key = \"startAt2\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"\r",
+							"pm.collectionVariables.set(key,value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"Шевцова\",\r\n    \"startAt\": \"2023-05-15T19:30:00+03:00\",\r\n    \"endAt\": \"2023-05-15T20:00:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/createPersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-14 Редактирование наименования личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"titleId2\"\r",
+							"var value = pm.response.json().data.payload.payload.title\r",
+							"\r",
+							"pm.collectionVariables.set(key,value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"{{$randomColor}}\",\r\n    \"startAt\": \"{{startAt2}}\",\r\n    \"endAt\": \"2023-05-15T20:00:00+03:00\",\r\n    \"id\": {{dataId2}},\r\n    \"oldStartAt\": \"{{startAt2}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/updatePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"updatePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-13 Удаление личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{dataId2}},\r\n    \"startAt\": \"{{startAt2}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/removePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"removePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-10_Добавление личного события 40 симв в будущем",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"dataId3\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"\r",
+							"pm.collectionVariables.set(key,value);\r",
+							"\r",
+							"var key = \"startAt3\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"\r",
+							"pm.collectionVariables.set(key,value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"Война и мир огромный роман Льва Толстого\",\r\n    \"startAt\": \"2023-05-21T22:00:00+03:00\",\r\n    \"endAt\": \"2023-05-21T22:30:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/createPersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-15 Редактирование даты личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"dataId4\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"\r",
+							"pm.collectionVariables.set(key,value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#81888D\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\": \"\",\r\n    \"title\": \"Война и мир огромный роман Льва Толстого\",\r\n    \"startAt\": \"{{startAt3}}\",\r\n    \"endAt\": \"2023-05-21T23:30:00+03:00\",\r\n    \"id\": {{dataId3}},\r\n    \"oldStartAt\": \"{{startAt3}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/updatePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"updatePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-13 Удаление личного события Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{dataId4}},\r\n    \"startAt\": \"{{startAt3}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/removePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"removePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-11_Добавление личного события со спецсимволами в будущем",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"dataId5\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"\r",
+							"pm.collectionVariables.set(key,value);\r",
+							"\r",
+							"var key = \"startAt4\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"\r",
+							"pm.collectionVariables.set(key,value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"*&^@%%\",\r\n    \"startAt\": \"2023-05-21T23:00:00+03:00\",\r\n    \"endAt\": \"2023-05-21T23:30:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/createPersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-16_Добавление личного события с буквами и цифрами, пересекающееся во времени",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"dataId6\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"\r",
+							"pm.collectionVariables.set(key,value);\r",
+							"\r",
+							"var key = \"startAt5\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"\r",
+							"pm.collectionVariables.set(key,value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"Городовой123\",\r\n    \"startAt\": \"2023-05-21T23:00:00+03:00\",\r\n    \"endAt\": \"2023-05-21T23:30:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/createPersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-13 Удаление личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{dataId5}},\r\n    \"startAt\": \"{{startAt4}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/removePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"removePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-13 Удаление личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{dataId6}},\r\n    \"startAt\": \"{{startAt5}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/removePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"removePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-17_Добавление личного события с валидным наименованием и заполненным валидными значениями полем \"Описание\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"dataId7\"\r",
+							"var value = pm.response.json().data.payload.id\r",
+							"\r",
+							"pm.collectionVariables.set(key,value);\r",
+							"\r",
+							"var key = \"startAt6\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"\r",
+							"pm.collectionVariables.set(key,value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"Тест\",\r\n    \"title\": \"Одуван_615\",\r\n    \"startAt\": \"2023-05-21T23:00:00+03:00\",\r\n    \"endAt\": \"2023-05-21T23:30:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/createPersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CW2-13 Удаление личного события Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{myToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{dataId7}},\r\n    \"startAt\": \"{{startAt6}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/{{v}}/schedule/removePersonal",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"{{v}}",
+						"schedule",
+						"removePersonal"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "myToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "URL",
+			"value": "https://api-teachers.skyeng.ru"
+		},
+		{
+			"key": "v",
+			"value": "v2"
+		},
+		{
+			"key": "titleId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "dataId2",
+			"value": ""
+		},
+		{
+			"key": "dataId",
+			"value": ""
+		},
+		{
+			"key": "startAt",
+			"value": ""
+		},
+		{
+			"key": "title",
+			"value": ""
+		},
+		{
+			"key": "startAt2",
+			"value": ""
+		},
+		{
+			"key": "titleId2",
+			"value": ""
+		},
+		{
+			"key": "dataId3",
+			"value": ""
+		},
+		{
+			"key": "startAt3",
+			"value": ""
+		},
+		{
+			"key": "dataId4",
+			"value": ""
+		},
+		{
+			"key": "dataId5",
+			"value": ""
+		},
+		{
+			"key": "startAt4",
+			"value": ""
+		},
+		{
+			"key": "dataId6",
+			"value": ""
+		},
+		{
+			"key": "startAt5",
+			"value": ""
+		},
+		{
+			"key": "dataId7",
+			"value": ""
+		},
+		{
+			"key": "startAt6",
+			"value": ""
+		}
+	]
+}
